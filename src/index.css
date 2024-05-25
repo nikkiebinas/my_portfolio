@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+  background: hsl(var(--color-black));
+}
+
+@layer base {
+  :root {
+    --color-black: 0deg 0% 9.8%;
+    --color-white: 0deg 0% 90%;
+    --color-maroon: 348.93deg 78.63% 25.69%;
+    --color-lightMaroon: 350deg 42.86% 43.92%;
+    --color-lightBlack: 0deg 0% 29.8%;
+  }
+}
+
+:root[class="light"] {
+  --color-black: 0deg 0% 90%;
+  --color-white: 0deg 0% 9.8%;
+  --color-maroon: 348.93deg 78.63% 25.69%;
+  --color-lightMaroon: 350deg 42.86% 43.92%;
+  --color-lightBlack: 0deg 0% 29.8%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--color-black));
+}
+
+::-webkit-scrollbar-thumb {
+  background: #750e21;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(117, 14, 33, 0.7);
+}
