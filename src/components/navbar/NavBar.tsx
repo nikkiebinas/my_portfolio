@@ -95,11 +95,9 @@ function NavBar() {
 
   return (
     <nav>
-      <div className="flex h-20 w-full items-center justify-between px-6">
+      <div className="flex h-20 w-full items-center justify-between pl-6 pr-4">
         <AnimatedSliding variants={slidingLeftVarients}>
-          <div className="sm:flex">
-            <img alt="logo" src={Logo} className="h-10 w-14 sm:ml-5" />
-          </div>
+          <img alt="logo" src={Logo} className="h-10 w-14 sm:ml-5" />
         </AnimatedSliding>
         <AnimatedSliding variants={slidingRightVarients}>
           <ul className="flex items-center justify-between sm:gap-8">
@@ -116,7 +114,10 @@ function NavBar() {
               <NavButton title="Contact" display="hidden" />
             </li>
             <li className="mr-2 mt-2 bg-black sm:mr-0">
-              <button className="" onClick={handleThemeSwitch}>
+              <button
+                className="rounded-full hover:bg-white/5"
+                onClick={handleThemeSwitch}
+              >
                 <img
                   alt="Sun && Moon"
                   src={theme !== "light" ? Sun : Moon}

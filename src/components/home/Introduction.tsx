@@ -1,15 +1,15 @@
 import IntroImg from "@/assets/intro-design.png";
-import { Variants } from "framer-motion";
 import {
-  AnimatedSliding,
   AnimatedMirror,
   AnimatedRotation,
+  AnimatedSliding,
 } from "@/shared/AnimatedSettings";
+import { IntroTypewriter } from "@/shared/AnimatedTypewriter";
+import { Variants } from "framer-motion";
 import Facebook from "@/assets/icons8-facebook-circled.svg";
 import LinkedIn from "@/assets/icons8-linkedin-circled.svg";
 import GitHub from "@/assets/icons8-github.svg";
 import Twitter from "@/assets/icons8-twitter-circled.svg";
-import { IntroTypewriter } from "@/shared/AnimatedTypewriter";
 
 const Introduction = () => {
   const slidingLeftVarients: Variants = {
@@ -47,93 +47,69 @@ const Introduction = () => {
   };
 
   return (
-    <section>
-      <div className="mt-6 sm:flex sm:flex-row sm:items-center sm:justify-between">
-        <AnimatedSliding variants={slidingLeftVarients}>
-          <div className="mx-6 flex flex-col items-start justify-center gap-2 sm:ml-12 sm:basis-2/4 sm:items-start sm:justify-start">
-            <h1 className="text-left font-serif text-xl leading-tight text-white md:text-2xl">
-              Hello, I'm{" "}
-              <span className="text-maroon">
-                Nikkie Biñas
-                <span className="text-white">
-                  ,<br></br>a{" "}
-                  <span className="text-maroon">
-                    <IntroTypewriter />
-                    <br></br>
-                    <span className="text-sm text-lightBlack md:text-lg">
-                      With a passion for creating intuitive and dynamic digital
-                      experiences, I specialize in crafting responsive websites
-                      and user-friendly mobile applications. Welcome to my
-                      portfolio, where you can explore my projects and see how I
-                      bring ideas to life through code and creativity.
-                    </span>
-                  </span>
-                </span>
-              </span>
-            </h1>
-            <ul className="mt-3 flex flex-row gap-2">
-              <li>
-                <a href="#">
-                  <AnimatedRotation variants={rotationVarients}>
-                    <img
-                      alt="Facebook"
-                      src={Facebook}
-                      className="h-10 w-10 rounded-full"
-                    />
-                  </AnimatedRotation>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <AnimatedRotation variants={rotationVarients}>
-                    <img
-                      alt="LinkIn"
-                      src={LinkedIn}
-                      className="h-10 w-10 rounded-full"
-                    />
-                  </AnimatedRotation>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <AnimatedRotation variants={rotationVarients}>
-                    <img
-                      alt="Github"
-                      src={GitHub}
-                      className="h-10 w-10 rounded-full"
-                    />
-                  </AnimatedRotation>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <AnimatedRotation variants={rotationVarients}>
-                    <img
-                      alt="Twitter"
-                      src={Twitter}
-                      className="h-10 w-10 rounded-full"
-                    />
-                  </AnimatedRotation>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </AnimatedSliding>
-        <AnimatedSliding variants={slidingRightVarients}>
-          <div className="mt-14 sm:mt-0 sm:basis-2/4">
-            <AnimatedMirror>
-              <div>
+    <section className="mt-6 sm:grid sm:grid-cols-2">
+      <AnimatedSliding variants={slidingLeftVarients}>
+        <div className="mx-6 flex flex-col items-start justify-start sm:ml-12">
+          <p className="font-serif text-xl leading-snug text-white sm:mt-[60px] md:text-2xl">
+            Hello, I'm <span className="text-maroon">Nikkie Biñas</span>
+            <br />a{" "}
+            <span className="text-maroon">
+              <IntroTypewriter />
+            </span>
+            <br />
+            <span className="text-sm text-lightBlack md:text-lg">
+              With a passion for creating intuitive and dynamic digital
+              experiences, I specialize in crafting responsive websites and
+              user-friendly mobile applications. Welcome to my portfolio, where
+              you can explore my projects and see how I bring ideas to life
+              through code and creativity.
+            </span>
+          </p>
+          <div className="mt-3 flex flex-row gap-2">
+            <a href="#">
+              <AnimatedRotation variants={rotationVarients}>
                 <img
-                  alt="Intro Image"
-                  src={IntroImg}
-                  className="h-full w-full"
-                  loading="lazy"
+                  alt="Facebook"
+                  src={Facebook}
+                  className="h-10 w-10 rounded-full"
                 />
-              </div>
-            </AnimatedMirror>
+              </AnimatedRotation>
+            </a>
+            <a href="#">
+              <AnimatedRotation variants={rotationVarients}>
+                <img
+                  alt="LinkIn"
+                  src={LinkedIn}
+                  className="h-10 w-10 rounded-full"
+                />
+              </AnimatedRotation>
+            </a>
+            <a href="#">
+              <AnimatedRotation variants={rotationVarients}>
+                <img
+                  alt="Github"
+                  src={GitHub}
+                  className="h-10 w-10 rounded-full"
+                />
+              </AnimatedRotation>
+            </a>
+            <a href="#">
+              <AnimatedRotation variants={rotationVarients}>
+                <img
+                  alt="Twitter"
+                  src={Twitter}
+                  className="h-10 w-10 rounded-full"
+                />
+              </AnimatedRotation>
+            </a>
           </div>
-        </AnimatedSliding>
-      </div>
+        </div>
+      </AnimatedSliding>
+      <AnimatedSliding variants={slidingRightVarients}>
+        <AnimatedMirror>
+          <img alt="Intro Image" src={IntroImg} className="mt-14 sm:mt-0" />
+        </AnimatedMirror>
+      </AnimatedSliding>
     </section>
   );
 };
