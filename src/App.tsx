@@ -10,6 +10,14 @@ function App() {
   return (
     <Routes>
       <Route
+        path="/"
+        element={
+          <Suspense fallback={<Loader loading={true} />}>
+            <LazyHome />
+          </Suspense>
+        }
+      />
+      <Route
         path="home"
         element={
           <Suspense fallback={<Loader loading={true} />}>
