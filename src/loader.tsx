@@ -14,7 +14,7 @@ const Loader = () => {
   return (
     <>
       {loading ? (
-        <div className="flex h-screen w-screen items-center justify-center bg-black">
+        <div className="flex h-[100dvh] w-screen items-center justify-center bg-black">
           <HashLoader
             color={"#750e21"}
             loading={loading}
