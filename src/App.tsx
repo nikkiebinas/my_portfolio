@@ -1,55 +1,20 @@
-import { lazy, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
-import Loader from "./loader";
-const LazyHome = lazy(() => import("@/screen/Home"));
-const LazyAbout = lazy(() => import("@/screen/About"));
-const LazyProject = lazy(() => import("@/screen/Project"));
-const LazyContact = lazy(() => import("@/screen/Contact"));
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import About from "@/screen/About";
+import Home from "@/screen/Home";
+import Project from "@/screen/Project";
+import Contact from "@/screen/Contact";
 
 function App() {
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <Suspense fallback={<Loader loading={true} />}>
-            <LazyHome />
-          </Suspense>
-        }
-      />
-      <Route
-        path="home"
-        element={
-          <Suspense fallback={<Loader loading={true} />}>
-            <LazyHome />
-          </Suspense>
-        }
-      />
-      <Route
-        path="about"
-        element={
-          <Suspense fallback={<Loader loading={true} />}>
-            <LazyAbout />
-          </Suspense>
-        }
-      />
-      <Route
-        path="project"
-        element={
-          <Suspense fallback={<Loader loading={true} />}>
-            <LazyProject />
-          </Suspense>
-        }
-      />
-      <Route
-        path="contact"
-        element={
-          <Suspense fallback={<Loader loading={true} />}>
-            <LazyContact />
-          </Suspense>
-        }
-      />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="project" element={<Project />} />
+        <Route path="contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
